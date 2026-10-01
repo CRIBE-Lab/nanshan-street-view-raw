@@ -22,7 +22,14 @@ data/
 
 本仓库仅发布与最终处理数据一一对应的有效原始影像，已排除 134 个孤立、诊断或旧版本文件。
 
+## 下载与校验
+
+```bash
+gh release download v1.0.0 --repo Aspartame-yao/nanshan-street-view-raw
+shasum -a 256 -c RELEASE_ASSETS.sha256
+for file in *part-*.tar; do tar -xf "$file"; done
+```
+
 ## 使用说明
 
 影像来源于百度地图相关接口。本数据集不授予影像版权或额外许可；使用者需自行遵守百度地图条款、隐私要求及所在地法律。仓库不包含 API 密钥、访问令牌或请求凭据。
-
